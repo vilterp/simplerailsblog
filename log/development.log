@@ -96,3 +96,426 @@ Migrating to AddForeignKeys (20090302162857)
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("authors")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-03-02 11:34:44) [GET]
+
+
+CGI::Session::CookieStore::TamperedWithCookie (CGI::Session::CookieStore::TamperedWithCookie):
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session/cookie_store.rb:145:in `unmarshal'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session/cookie_store.rb:102:in `restore'
+    /usr/local/lib/ruby/1.8/cgi/session.rb:304:in `[]'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/cgi_process.rb:98:in `session'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/cgi_process.rb:130:in `stale_session_check!'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/cgi_process.rb:78:in `session'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1205:in `assign_shortcuts_without_flash'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/flash.rb:166:in `assign_shortcuts'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:519:in `process_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (36.3ms)
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-03-02 11:34:50) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-03-02 11:34:53) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-03-02 11:34:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"f489b1c220edc572e195655f89646c00eee38d76", "post"=>{"body"=>"yo", "title"=>"Sup"}}
+  [4;35;1mPost Exists (0.3ms)[0m   [0mSELECT "posts".id FROM "posts" WHERE ("posts"."title" = 'Sup') LIMIT 1[0m
+  [4;36;1mPost Create (0.7ms)[0m   [0;1mINSERT INTO "posts" ("updated_at", "title", "body", "author_id", "created_at") VALUES('2009-03-02 16:34:59', 'Sup', 'yo', NULL, '2009-03-02 16:34:59')[0m
+Redirected to #<Post:0x307acf8>
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-02 11:34:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-03-02 11:35:04) [GET]
+
+
+NoMethodError (undefined method `assert_valid_keys' for :comments:Symbol):
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:1564:in `create_has_many_reflection'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:766:in `has_many'
+    /app/models/author.rb:2
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/authors_controller.rb:5:in `index'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (49.2ms)
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.3ms)
+Rendering /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-03-02 11:37:06) [GET]
+
+
+NoMethodError (undefined method `assert_valid_keys' for :comments:Symbol):
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:1564:in `create_has_many_reflection'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:766:in `has_many'
+    /app/models/author.rb:2
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/authors_controller.rb:5:in `index'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (55.8ms)
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (23.4ms)
+Rendering /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-03-02 11:37:07) [GET]
+
+
+NoMethodError (undefined method `assert_valid_keys' for :comments:Symbol):
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:1564:in `create_has_many_reflection'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/associations.rb:766:in `has_many'
+    /app/models/author.rb:2
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/authors_controller.rb:5:in `index'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/petevilter/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (51.5ms)
+Rendered /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendering /Users/petevilter/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-03-02 11:37:12) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2009-03-02 11:37:14) [GET]
+Rendering template within layouts/comments
+Rendering comments/new
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-03-02 11:37:16) [GET]
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-03-02 11:38:01) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-03-02 11:38:05) [GET]
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2009-03-02 11:39:48) [GET]
+Rendering template within layouts/authors
+Rendering authors/new
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/authors/new]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2009-03-02 11:41:06) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"f489b1c220edc572e195655f89646c00eee38d76", "author"=>{"name"=>"Pedro Viltero", "website"=>"thinking-chair.com", "email"=>"bonasaurus1@gmai.com"}}
+Rendering template within layouts/authors
+Rendering authors/new
+Completed in 65ms (View: 7, DB: 0) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2009-03-02 11:41:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"f489b1c220edc572e195655f89646c00eee38d76", "author"=>{"name"=>"Pedro Viltero", "website"=>"http://thinking-chair.com", "email"=>"bonasaurus1@gmai.com"}}
+  [4;36;1mAuthor Create (33.9ms)[0m   [0;1mINSERT INTO "authors" ("name", "updated_at", "website", "email", "created_at") VALUES('Pedro Viltero', '2009-03-02 16:41:24', 'http://thinking-chair.com', 'bonasaurus1@gmai.com', '2009-03-02 16:41:24')[0m
+Redirected to #<Author:0x3279d4c>
+Completed in 49ms (DB: 34) | 302 Found [http://localhost/authors]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2009-03-02 11:41:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering template within layouts/authors
+Rendering authors/show
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2009-03-02 11:41:29) [GET]
+  [4;36;1mAuthor Load (14.7ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 71ms (View: 14, DB: 15) | 200 OK [http://localhost/authors]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-03-02 11:41:34) [GET]
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 42ms (View: 7, DB: 1) | 200 OK [http://localhost/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2009-03-02 11:41:36) [GET]
+Rendering template within layouts/comments
+Rendering comments/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/comments/new]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-03-02 11:41:38) [GET]
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" [0m
+Rendering template within layouts/comments
+Rendering comments/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/comments]
