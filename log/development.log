@@ -3561,3 +3561,4 @@ Rendered comments/_comment (0.9ms)
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Rendered comments/_comment (0.9ms)
 Completed in 54ms (View: 41, DB: 3) | 200 OK [http://localhost/posts/1]
+  [4;36;1mPost Exists (0.3ms)[0m   [0;1mSELECT "posts".id FROM "posts" WHERE ("posts"."title" IS NULL) LIMIT 1[0m

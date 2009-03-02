@@ -2,6 +2,7 @@
 class SessionsController < ApplicationController
 
   # render new.rhtml
+  # new session means log in, get it?
   def new
   end
 
