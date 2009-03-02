@@ -1,5 +1,6 @@
 <%= render :partial => @post %>
 
+<h2>Comments</h2>
 <div class="comments">
     <% if !@post.comments.blank? %>
       <%= render :partial => @post.comments %>
