@@ -1,0 +1,7 @@
+<div class="comment">
+    <span class="author"><%= comment.author.name %></span> said 
+    <span class="time"><%= time_ago_in_words(comment.created_at) %></span>
+    <div class="body">
+        <%= textilize(comment.body) %>
+    </div>
+</div>

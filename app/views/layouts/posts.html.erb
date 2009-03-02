@@ -8,10 +8,12 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield  %>
+    
+    <h1><%= link_to "My Rails Blog", "/" %></h1>
+    
+    <p style="color: green"><%= flash[:notice] %></p>
+    
+    <%= yield  %>
 
 </body>
 </html>

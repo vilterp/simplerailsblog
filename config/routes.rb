@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :authors
 
-  map.resources :posts
+  map.resources :posts, :has_many => :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
 
