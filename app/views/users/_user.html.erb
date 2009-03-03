@@ -1,6 +1,7 @@
 <div class="user">
     <h2><%= link_to user.name, user %></h2>
-    <% if !user.website.nil? %>
-      <%= link_to user.website %>
+    <%= gravatar_for user %>
+    <% if !user.site.nil? %>
+      <%= link_to user.site %>
     <% end %>
 </div>

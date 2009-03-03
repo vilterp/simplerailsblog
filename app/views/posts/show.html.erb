@@ -11,7 +11,7 @@
 
     <% form_for [@post, Comment.new] do |f| %>
         <% if logged_in? %>
-            <p>logged in as <%= current_user.name %> <%= link_to "Log Out &raquo;", logout_path %></p>
+            <p>logged in as <%= link_to current_user.name, current_user %> <%= link_to "Log Out &raquo;", logout_path %></p>
         <% else %>
             <p><%= link_to "Log in &raquo;", login_path %></p>
         <% end -%>

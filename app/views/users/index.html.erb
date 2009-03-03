@@ -1,6 +1,8 @@
 <h1>Users</h1>
 
-<%= link_to 'Sign Up &raquo;', signup_path %>
+<% if !logged_in? %>
+  <%= link_to 'Sign Up &raquo;', signup_path %>
+<% end %>
 
 <% if !@users.blank? %>
   <% for user in @users %>

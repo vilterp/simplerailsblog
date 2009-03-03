@@ -1,5 +1,5 @@
 <div class="comment">
-    <span class="author"><%= comment.user.name %></span> said 
+    <span class="author"><%= link_to comment.user.name, comment.user %></span> said 
     <span class="time"><%= time_ago_in_words(comment.created_at) %> ago</span>
     <div class="body">
         <%= textilize(comment.body) %>
