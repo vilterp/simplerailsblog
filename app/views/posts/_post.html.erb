@@ -1,7 +1,13 @@
 <div class="post">
     <h2><%= link_to post.title, post %></h2>
-    <span class="time"><%= time_ago_in_words(post.updated_at) %> ago</span> by 
-    <span class="author"><%= link_to post.user.name, post.user %></span><br/>
+    <span class="time" title="<%= post.updated_at %>"><%= time_ago_in_words(post.updated_at) %> ago</span> by 
+    <span class="author"><%= link_to post.user.name, post.user %></span>
+    <span class="comments_link"><% if !post.comments.blank? %>
+      <%= link_to pluralize(post.comments.length,'comment'), post %>
+      <!-- TODO: link to #comments -->
+    <% else %>
+      <%= link_to 'No comments', post %>
+    <% end %></span><br/>
     <div class="body">
         <%= textilize(post.body) %>
     </div>

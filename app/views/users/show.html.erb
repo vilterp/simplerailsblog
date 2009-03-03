@@ -1,11 +1,15 @@
-<%= render :partial => @user %>
+<%= link_to '&laquo; All Users', users_path %>
 
+<%= render :partial => @user %>
 
 <% if !@user.posts.blank? %>
   <h2>Posts</h2>
   <ul>
-    <% for post in @user.posts %>
-      <li><%= link_to post.title, post %> <em>(<%= time_ago_in_words(post.updated_at) %> ago)</em></li>
+    <% for post in @user.posts.reverse %>
+      <li>
+        <%= link_to post.title, post %>
+        <em title="<%= post.updated_at %>">(<%= time_ago_in_words(post.updated_at) %> ago)</em>
+      </li>
     <% end %>
   </ul>
 <% else %>
@@ -15,9 +19,10 @@
 <% if !@user.comments.blank? %>
   <h2>Comments</h2>
   <ul>
-    <% for comment in @user.comments %>
+    <% for comment in @user.comments.reverse %>
       <li>
-        <%= link_to time_ago_in_words(comment.updated_at), comment.post %> ago on <%= link_to comment.post.title, post %>
+        <%= link_to time_ago_in_words(comment.updated_at), comment.post, :title => comment.updated_at %> ago on
+        <%= link_to comment.post.title, post %>
         <!-- TODO: link to comment -->
       </li>
     <% end %>

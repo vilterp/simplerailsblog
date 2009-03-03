@@ -14,12 +14,15 @@
     <p style="color: green"><%= flash[:notice] %></p>
     
     <% if logged_in? %>
-        Logged in as <%= current_user.name %>. <%= link_to 'Log out &raquo;', logout_path %>
+        Logged in as <%= link_to_unless_current current_user.name, current_user %>.
+        <%= link_to 'Log out &raquo;', logout_path %>
     <% else %>
         <%= link_to 'Log In &raquo;', login_path %>
     <% end %>
+    <br/>
     
     <%= yield  %>
 
 </body>
 </html>
+<!-- TODO: use this for all controllers -->

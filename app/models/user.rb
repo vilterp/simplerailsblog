@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   
+  has_permalink :name
+  
+  def to_param
+    permalink
+  end
+  
   # Virtual attribute for the unencrypted password
   attr_accessor :password
   

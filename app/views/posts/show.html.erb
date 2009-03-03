@@ -1,7 +1,7 @@
 <%= render :partial => @post %>
 
 <h2>Comments</h2>
-<div class="comments">
+<div id="comments">
     <% if !@post.comments.blank? %>
       <%= render :partial => @post.comments %>
       <h3>Leave Another Comment</h3>
@@ -11,7 +11,8 @@
 
     <% form_for [@post, Comment.new] do |f| %>
         <% if logged_in? %>
-            <p>logged in as <%= link_to current_user.name, current_user %> <%= link_to "Log Out &raquo;", logout_path %></p>
+            <p>logged in as <%= link_to current_user.name, current_user %>
+            <em><small><%= link_to "Log Out &raquo;", logout_path %></small></em></p>
         <% else %>
             <p><%= link_to "Log in &raquo;", login_path %></p>
         <% end -%>
