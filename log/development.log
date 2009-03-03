@@ -5197,3 +5197,33 @@ Rendered comments/_comment (0.7ms)
 Rendered comments/_comment (0.8ms)
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Completed in 81ms (View: 73, DB: 1) | 200 OK [http://localhost/posts/sup]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090302162019)
+Migrating to CreateComments (20090302162158)
+Migrating to AddForeignKeys (20090302162857)
+Migrating to CreateUsers (20090302220227)
+Migrating to AddNameToUser (20090302222647)
+Migrating to MoveFromAuthorsToUsers (20090302223441)
+Migrating to AddPermalinkToPost (20090303002017)
+Migrating to AddSiteToUser (20090303021530)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mALTER TABLE "users" ADD "site" varchar(255)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090303021530')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("authors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m

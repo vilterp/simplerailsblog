@@ -1,5 +1,5 @@
 <div class="post">
-    <h2><%= link_to post.title, :controller => "posts", :action => "show", :id => post %></h2>
+    <h2><%= link_to post.title, post %></h2>
     <span class="time"><%= time_ago_in_words(post.updated_at) %> ago</span> by 
     <span class="author"><%= post.user.name %></span><br/>
     <div class="body">
