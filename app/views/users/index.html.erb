@@ -1,0 +1,11 @@
+<h1>Users</h1>
+
+<%= link_to 'Sign Up &raquo;', signup_path %>
+
+<% if !@users.blank? %>
+  <% for user in @users %>
+    <%= render :partial => user %>
+  <% end %>
+<% else %>
+  <p>No Users.</p>
+<% end %>
