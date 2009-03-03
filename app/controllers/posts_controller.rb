@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find_by_permalink(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find_by_permalink(params[:id])
-
+    
     respond_to do |format|
       if @post.update_attributes(params[:post])
         flash[:notice] = 'Post was successfully updated.'

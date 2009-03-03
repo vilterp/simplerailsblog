@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.home '', :controller => 'posts', :action => 'index'
+  map.root :controller => 'posts'
   map.resources :users
   map.resource :session
   map.resources :posts, :has_many => :comments
