@@ -10,6 +10,11 @@
     <% end %>
 
     <% form_for [@post, Comment.new] do |f| %>
+        <% if logged_in? %>
+            <p>logged in as <%= current_user.name %> <%= link_to "Log Out &raquo;", logout_path %></p>
+        <% else %>
+            <p><%= link_to "Log in &raquo;", login_path %></p>
+        <% end -%>
         <p>
             <%= f.text_area :body %>
         </p>
@@ -21,5 +26,5 @@
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back', posts_path %>

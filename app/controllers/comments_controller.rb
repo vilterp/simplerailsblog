@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by_permalink(params[:post_id])
     @comment = @post.comments.build(params[:comment])
-    @comment.author = Author.find(2)
+    @comment.user = current_user
     @comment.save
     redirect_to @post
   end
