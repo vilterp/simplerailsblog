@@ -4,9 +4,9 @@
 <div id="comments">
     <% if !@post.comments.blank? %>
       <%= render :partial => @post.comments %>
-      <h3>Leave Another Comment</h3>
+      <h3 id="leave_comment">Leave Another Comment</h3>
     <% else %>
-      <h3>Leave the First Comment</h3>
+      <h3 id="leave_comment">Leave the First Comment</h3>
     <% end %>
 
     <% form_for [@post, Comment.new] do |f| %>
