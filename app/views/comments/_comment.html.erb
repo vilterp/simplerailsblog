@@ -1,6 +1,8 @@
-<div class="comment">
+<div class="comment" id="comment_<%= comment.id %>"> <!-- div_for wasn't working... -->
     <span class="author"><%= link_to comment.user.name, comment.user %></span> said 
-    <span class="time" title="<%= comment.updated_at %>"><%= time_ago_in_words(comment.created_at) %> ago</span>
+    <span class="time" title="<%= comment.updated_at %>"><% link_to(:anchor => "comment_#{comment.id}") do %>
+      <%= time_ago_in_words(comment.updated_at) %> ago
+    <% end -%></span>
     <div class="body">
         <%= textilize(comment.body) %>
     </div>

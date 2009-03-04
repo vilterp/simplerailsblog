@@ -3,7 +3,7 @@
     <span class="time" title="<%= post.updated_at %>"><%= time_ago_in_words(post.updated_at) %> ago</span> by 
     <span class="author"><%= link_to post.user.name, post.user %></span>
     <span class="comments_link"><% if !post.comments.blank? %>
-      <%= link_to pluralize(post.comments.length,'comment'), post %>
+      <%= link_to pluralize(post.comments.length,'comment'), post_path(post, :anchor => 'comments') %>
       <!-- TODO: link to #comments -->
     <% else %>
       <%= link_to 'No comments', post %>
