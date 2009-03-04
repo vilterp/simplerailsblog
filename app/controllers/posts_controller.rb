@@ -45,6 +45,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        Event.create :user => current_user, :item => @post, :action => 'create'
+        
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to(@post) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
@@ -62,6 +64,8 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       if @post.update_attributes(params[:post])
+        Event.create :user => current_user, :item => @post, :action => 'update'
+        
         flash[:notice] = 'Post was successfully updated.'
         format.html { redirect_to(@post) }
         format.xml  { head :ok }
@@ -74,9 +78,9 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   # DELETE /posts/1.xml
-  def destroy
+  def destroy    
     @post = Post.find_by_permalink(params[:id])
-    @post.destroy
+    @post.delete
 
     respond_to do |format|
       format.html { redirect_to(posts_url) }
