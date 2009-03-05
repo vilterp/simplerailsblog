@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  
+  # TODO: authenticate new, edit, destroy, etc
+  
   # GET /posts
   # GET /posts.xml
   def index
@@ -22,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/new
-  # GET /posts/new.xml
+  # GET /posts/new.xml  
   def new
     @post = Post.new
 
@@ -41,10 +44,9 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-    @post.user = current_user
 
     respond_to do |format|
-      if @post.save
+      if @post.save_with_user(current_user)
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to(@post) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
@@ -61,7 +63,8 @@ class PostsController < ApplicationController
     @post = Post.find_by_permalink(params[:id])
     
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      @post.attributes = params[:post]
+      if @post.save_with_user(current_user)
         flash[:notice] = 'Post was successfully updated.'
         format.html { redirect_to(@post) }
         format.xml  { head :ok }

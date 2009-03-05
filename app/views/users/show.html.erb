@@ -2,33 +2,27 @@
 
 <%= render :partial => @user %>
 
-<% if !@user.posts.blank? %>
-  <h2>Posts</h2>
+<% if !@user.events.blank? %>
   <ul>
-    <% for post in @user.posts.reverse %>
-      <li>
-        <%= link_to post.title, post %>
-        <em title="<%= post.updated_at %>">(<%= time_ago_in_words(post.updated_at) %> ago)</em>
-      </li>
+  <!-- TODO: make this more flexible... switch statement? partials? -->
+  <% for event in @user.events.reverse %>
+    <li>
+    <% if event.item_class == 'Post' %>
+      <% if event.action == 'create' %>
+        wrote <%= link_to event.item.title, event.item %>
+      <% elsif event.action == 'update' %>
+        updated <%= link_to event.item.title, event.item %>
+        <!-- TODO: provide more detail about what was changed. diff, "renamed _ to _", etc -->
+      <% end %>      
+    <% elsif event.item_class == 'Comment' %>
+      commented on <%= link_to event.item.post.title, event.item.post %>
+      <!-- TODO: link to comment -->
+      <!-- TODO: show beginning of comment -->
     <% end %>
+    <%= time_ago_in_words(event.created_at) %> ago
+    </li>
+  <% end %>
   </ul>
 <% else %>
-  <p>This user hasn't written any posts.</p>
+  <p>This user hasn't done anything. Lazy bum.</p>
 <% end %>
-
-<% if !@user.comments.blank? %>
-  <h2>Comments</h2>
-  <ul>
-    <% for comment in @user.comments.reverse %>
-      <li>
-        <span title="<%= "comment_#{comment.id}" %>">
-          <%= link_to("#{time_ago_in_words(comment.updated_at)} ago", post_path(comment.post, :anchor => "comment_#{comment.id}")) %>
-        </span> on
-        <%= link_to comment.post.title, post %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>This user hasn't written any comments.</p>
-<% end %>
-
