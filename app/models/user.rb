@@ -2,7 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   
-  has_many :posts
+  has_many :posts, :foreign_key => "owner_id"
   has_many :comments
   has_many :events
   

@@ -5,21 +5,29 @@
 <% if !@user.events.blank? %>
   <ul>
   <!-- TODO: make this more flexible... switch statement? partials? -->
+  <!-- TODO: split by day -->
   <% for event in @user.events.reverse %>
     <li>
+    <%= time_ago_in_words(event.created_at) %> ago: 
     <% if event.item_class == 'Post' %>
       <% if event.action == 'create' %>
-        wrote <%= link_to event.item.title, event.item %>
+        wrote <%= link_to event.item.title, event.item %>: <em><%= truncate event.item.body %></em>
       <% elsif event.action == 'update' %>
-        updated <%= link_to event.item.title, event.item %>
-        <!-- TODO: provide more detail about what was changed. diff, "renamed _ to _", etc -->
+        <% if event.changes.keys.include? 'title' %><!-- TODO: what if multiple attrs have changed? -->
+          changed the title of
+          <%= link_to event.changes['title'].first, event.item %> to
+          <%= link_to event.changes['title'].second, event.item %>
+        <% elsif event.changes.keys.include? 'body' %>
+          updated <%= link_to event.item.title, event.item %>:
+          <%= diff(event.changes['body'][0],event.changes['body'][1]) %>
+          <!-- TODO: diff -->
+        <% end %>
       <% end %>      
     <% elsif event.item_class == 'Comment' %>
-      commented on <%= link_to event.item.post.title, event.item.post %>
-      <!-- TODO: link to comment -->
-      <!-- TODO: show beginning of comment -->
+      commented on
+      <%= link_to event.item.post.title, post_path(event.item.post, :anchor => "comment_#{event.item.id}") %>: 
+      <em>"<%= truncate event.item.body %>"</em>
     <% end %>
-    <%= time_ago_in_words(event.created_at) %> ago
     </li>
   <% end %>
   </ul>

@@ -44,7 +44,8 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-
+    @post.owner = current_user
+    
     respond_to do |format|
       if @post.save_with_user(current_user)
         flash[:notice] = 'Post was successfully created.'
