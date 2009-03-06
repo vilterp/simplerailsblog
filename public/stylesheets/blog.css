@@ -58,3 +58,7 @@ ins {
 del {
   background-color: pink;
 }
+
+.diff {
+  margin: 5px;
+}

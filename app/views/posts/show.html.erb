@@ -2,11 +2,19 @@
 
 <h2>Comments</h2>
 <div id="comments">
-    <% if !@post.comments.blank? %>
-      <%= render :partial => @post.comments %>
-      <!-- TODO: is this looping through the comments? what if I want a <ul>? -->
+    <% if !@post.comments_and_edits.blank? %>
+      <ul>
+      <% for comment_or_edit in @post.comments_and_edits %>
+        <li>
+        <% if comment_or_edit.class.to_s == 'Comment' %>
+          <%= render :partial => "comment", :object => comment_or_edit %>
+        <% else %> <!-- TODO: put this edit business into a partial? -->
+          <%= render :partial => "edit", :object => comment_or_edit %>
+        <% end %>
+        </li>
+      <% end -%>  
+      </ul>
       <!-- TODO: nested comments or Trac-style followup link -->
-      <!-- TODO: insert update notifications -->
       <h3 id="leave_comment">Leave Another Comment</h3>
     <% else %>
       <h3 id="leave_comment">Leave the First Comment</h3>

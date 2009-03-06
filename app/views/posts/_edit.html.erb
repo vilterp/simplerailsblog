@@ -1,0 +1,10 @@
+<% if edit.changes.keys.include? 'title' %>
+  <%= link_to edit.user.name, edit.user %> renamed this from
+  <%= edit.changes['title'].first %> to <%= edit.changes['title'].second %>
+  <%= time_ago_in_words(edit.created_at) %> ago
+<% elsif edit.changes.keys.include? 'body' %>
+  <%= link_to edit.user.name, edit.user %> made an edit <%= time_ago_in_words(edit.created_at) %> ago:
+  <div class="diff">
+    <%= diff edit.changes['body'].first, edit.changes['body'].second %>
+  </div>
+<% end %>

@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base  
   belongs_to :owner, :class_name => 'User'
   has_many :comments
+  has_many :edits, :class_name => 'Event', :foreign_key => "item_id",
+           :conditions => { :item_class => 'Post', :action => 'update' }
   
   validates_presence_of :title, :body
   validates_uniqueness_of :title
@@ -9,6 +11,12 @@ class Post < ActiveRecord::Base
   
   def to_param
     permalink
+  end
+  
+  def comments_and_edits
+    (self.comments + self.edits).sort! do |x,y|
+      x.created_at <=> y.created_at
+    end
   end
   
   # TODO: wrap these in an include
