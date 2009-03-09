@@ -39,3 +39,344 @@ Completed in 861ms (View: 852, DB: 2) | 200 OK [http://localhost/posts/yeah]
   [4;36;1mEvent Load (1.2ms)[0m   [0;1mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
   [4;36;1mEvent Load (1.2ms)[0m   [0;1mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
   [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:50:03) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (38.2ms)
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (169.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (208.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (225.1ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 667ms (View: 658, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:51:01) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (20.4ms)
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (177.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (213.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (295.3ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 731ms (View: 722, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2009-03-09 18:53:54) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/posts/yeah/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2009-03-09 18:54:27) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"20511b04aaac19466e127f246faaa1871bcf8f5f", "post"=>{"body"=>"In that document (freakin' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson's hypertext vision, at least for that one site. Fittingly, the W3C's \"Jigsaw\":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.\r\n\r\nA couple of the aspects of his vision haven't really happened yet: RDF and RDFa implement links with relationship values, but that hasn't really taken off yet, and I still know of no good way to create and save private annotations and private links. (I'm trying out \"Diigo\":http://diigo.com/ -- seems promising, if a little ugly)", "title"=>"Yeah"}, "id"=>"yeah"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPost Exists (0.1ms)[0m   [0;1mSELECT "posts".id FROM "posts" WHERE ("posts"."title" = 'Yeah' AND "posts".id <> 29) LIMIT 1[0m
+  [4;35;1mPost Update (0.4ms)[0m   [0mUPDATE "posts" SET "body" = 'In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+
+A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)', "updated_at" = '2009-03-09 22:54:27' WHERE "id" = 29[0m
+  [4;36;1mEvent Create (0.3ms)[0m   [0;1mINSERT INTO "events" ("item_id", "item_class", "action", "changes", "user_id", "created_at") VALUES(29, 'Post', 'update', '--- 
+body: 
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his serverz which make existing databases into hypertext are identifiable as modern database-driven web applicationz. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikiz. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement linkz with relationship valuez, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+', 1, '2009-03-09 22:54:27')[0m
+Redirected to #<Post:0x2391d98>
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:54:27) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (55.5ms)
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (173.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (206.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (227.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (288.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 974ms (View: 966, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-03-09 18:54:46) [POST]
+  Parameters: {"commit"=>"Speak", "post_id"=>"yeah", "authenticity_token"=>"20511b04aaac19466e127f246faaa1871bcf8f5f", "comment"=>{"body"=>"These diffs take so long!"}}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("updated_at", "body", "post_id", "user_id", "created_at") VALUES('2009-03-09 22:54:46', 'These diffs take so long!', 29, 1, '2009-03-09 22:54:46')[0m
+  [4;35;1mEvent Create (0.3ms)[0m   [0mINSERT INTO "events" ("item_id", "item_class", "action", "changes", "user_id", "created_at") VALUES(23, 'Comment', 'create', '--- 
+body: 
+- 
+- These diffs take so long!
+post_id: 
+- 
+- 29
+user_id: 
+- 
+- 1
+', 1, '2009-03-09 22:54:46')[0m
+Redirected to #<Post:0x2435bdc>
+Completed in 30ms (DB: 1) | 302 Found [http://localhost/posts/yeah/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:54:46) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (20.0ms)
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (176.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (209.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (291.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (223.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.9ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 950ms (View: 941, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2009-03-09 18:55:19) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/posts/yeah/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2009-03-09 18:55:26) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"20511b04aaac19466e127f246faaa1871bcf8f5f", "post"=>{"body"=>"In that document (freakin' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson's hypertext vision, at least for that one site. Fittingly, the W3C's \"Jigsaw\":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.\r\n\r\nA couple of the aspects of his vision haven't really happened yet: RDF and RDFa implement links with relationship values, but that hasn't really taken off yet, and I still know of no good way to create and save private annotations and private links. (I'm trying out \"Diigo\":http://diigo.com/ -- seems promising, if a little ugly)\r\n\r\nSo yeah.", "title"=>"Yeah"}, "id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPost Exists (0.1ms)[0m   [0;1mSELECT "posts".id FROM "posts" WHERE ("posts"."title" = 'Yeah' AND "posts".id <> 29) LIMIT 1[0m
+  [4;35;1mPost Update (0.3ms)[0m   [0mUPDATE "posts" SET "body" = 'In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+
+A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+
+So yeah.', "updated_at" = '2009-03-09 22:55:26' WHERE "id" = 29[0m
+  [4;36;1mEvent Create (0.3ms)[0m   [0;1mINSERT INTO "events" ("item_id", "item_class", "action", "changes", "user_id", "created_at") VALUES(29, 'Post', 'update', '--- 
+body: 
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+ 
+ So yeah.
+', 1, '2009-03-09 22:55:26')[0m
+Redirected to #<Post:0x2318a60>
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:55:26) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (20.1ms)
+  [4;36;1mEvent Load (1.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (112.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (205.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (297.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (223.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (176.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1127ms (View: 1056, DB: 2) | 200 OK [http://localhost/posts/yeah]
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2009-03-09 18:59:02) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/posts/yeah/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2009-03-09 18:59:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"20511b04aaac19466e127f246faaa1871bcf8f5f", "post"=>{"body"=>"In that document (freakin' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson's hypertext vision, at least for that one site. Fittingly, the W3C's \"Jigsaw\":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.\r\n\r\nA couple of the aspects of his vision haven't really happened yet: RDF and RDFa implement links with relationship values, but that hasn't really taken off yet, and I still know of no good way to create and save private annotations and private links. (I'm trying out \"Diigo\":http://diigo.com/ -- seems promising, if a little ugly)", "title"=>"Yeah"}, "id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPost Exists (0.1ms)[0m   [0;1mSELECT "posts".id FROM "posts" WHERE ("posts"."title" = 'Yeah' AND "posts".id <> 29) LIMIT 1[0m
+  [4;35;1mPost Update (0.3ms)[0m   [0mUPDATE "posts" SET "body" = 'In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+
+A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)', "updated_at" = '2009-03-09 22:59:10' WHERE "id" = 29[0m
+  [4;36;1mEvent Create (0.3ms)[0m   [0;1mINSERT INTO "events" ("item_id", "item_class", "action", "changes", "user_id", "created_at") VALUES(29, 'Post', 'update', '--- 
+body: 
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+ 
+ So yeah.
+- |-
+ In that document (freakin'' 1989, 20 years ago now!) Tim Berners-Lee outlined his ideas for the web. The basic ideas are all there, and much of his vision has come to exist: the links, the standardized network protocol; even his servers which make existing databases into hypertext are identifiable as modern database-driven web applications. Most of the web that I use nowadays is database-driven -- the only time I encounter pure hypertext, besides ugly pages made by teachers, is on wikis. Wiki applications manage documents, but they go beyond HTTP by keeping track of versions, authorship, revisions, etc behind the scenes, fully implementing Ted Nelson''s hypertext vision, at least for that one site. Fittingly, the W3C''s "Jigsaw":http://www.w3.org/Jigsaw/Doc/Programmer/design.html implements this at the web server level.
+ 
+ A couple of the aspects of his vision haven''t really happened yet: RDF and RDFa implement links with relationship values, but that hasn''t really taken off yet, and I still know of no good way to create and save private annotations and private links. (I''m trying out "Diigo":http://diigo.com/ -- seems promising, if a little ugly)
+', 1, '2009-03-09 22:59:10')[0m
+Redirected to #<Post:0x21845c8>
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 18:59:10) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (84.7ms)
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (114.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (194.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (283.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (218.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (172.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (104.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1269ms (View: 1260, DB: 2) | 200 OK [http://localhost/posts/yeah]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 19:05:50) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (20.9ms)
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (174.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (198.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (218.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (211.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (166.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (179.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1199ms (View: 1190, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 19:06:02) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (38.1ms)
+  [4;35;1mEvent Load (0.9ms)[0m   [0mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (165.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (205.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (206.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (206.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (167.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (175.1ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1194ms (View: 1185, DB: 2) | 200 OK [http://localhost/posts/yeah]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY events.id DESC LIMIT 1[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 19:08:12) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (19.4ms)
+  [4;35;1mEvent Load (0.9ms)[0m   [0mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (170.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (202.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (214.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (279.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_comment (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (104.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (173.3ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1195ms (View: 1184, DB: 2) | 200 OK [http://localhost/posts/yeah]

@@ -32,7 +32,7 @@ module ApplicationHelper
   end
   
   def diff_excerpts(text1, text2)
-    excerpts(diff(text1,text2),/(<ins class="diffmod">.*?<\/ins>|<del class="diffmod">.*?<\/del>)/)
+    excerpts(diff(text1,text2),/<(ins|del) class="(diffmod|diffins|diffdel)">.*?<\/\1>/m)
   end
   
 end
