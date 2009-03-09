@@ -2,5 +2,7 @@
 - diff_excerpts in comments
 - new post link at top of page
 - Edit | Destroy links after post, before comments header
-- preview
+- ajax preview before post (comment?) save
+- ajax diff before post save?
 - make the edit post textarea wider
+- only allow edit/create/comment when logged in

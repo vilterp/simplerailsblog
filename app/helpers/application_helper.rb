@@ -25,7 +25,7 @@ module ApplicationHelper
   	    ans << text[last_range.end+1..end_ind]
         last_range = last_range.begin..end_ind
   	  end
-      start = match_index + text.match(re)[0].length
+      start = match_index + text[start..-1].match(re)[0].length
     end
     ans.rstrip!; ans << omission unless last_range.end == text.length-1
     options[:highlight].nil? ? ans : ans.gsub(re,options[:highlight])
