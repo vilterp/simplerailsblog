@@ -5,7 +5,8 @@
 <% if !@user.events.blank? %>
   <ul>
   <!-- TODO: make this more flexible... switch statement? partials? -->
-  <!-- TODO: split by day -->
+  <!-- TODO: split by day, don't show relative date if it's older than 2 or 3 days -->
+  <!-- TODO: events that involve posts that have been destroyed break it -->
   <% for event in @user.events.reverse %>
     <li>
     <%= time_ago_in_words(event.created_at) %> ago: 
@@ -14,12 +15,12 @@
         wrote <%= link_to event.item.title, event.item %>: <em><%= truncate event.item.body %></em>
       <% elsif event.action == 'update' %>
         <% if event.changes.keys.include? 'title' %><!-- TODO: what if multiple attrs have changed? -->
-          changed the title of
+          renamed
           <%= link_to event.changes['title'].first, event.item %> to
           <%= link_to event.changes['title'].second, event.item %>
         <% elsif event.changes.keys.include? 'body' %>
           updated <%= link_to event.item.title, event.item %>:
-          <%= diff(event.changes['body'][0],event.changes['body'][1]) %>
+          <%= diff_excerpts event.changes['body'][0], event.changes['body'][1] %>
           <!-- TODO: diff -->
         <% end %>
       <% end %>      

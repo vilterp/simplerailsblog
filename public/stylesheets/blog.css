@@ -54,9 +54,11 @@ a:hover { color: #fff; background-color:#000; }
 
 ins {
   background-color: lightgreen;
+  text-decoration: none;
 }
 del {
   background-color: pink;
+  text-decoration: none;
 }
 
 .diff {
