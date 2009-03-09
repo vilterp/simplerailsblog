@@ -6,3 +6,5 @@
 - ajax diff before post save?
 - make the edit post textarea wider
 - only allow edit/create/comment when logged in
+- optimize post edits
+  - compute diff on save, put in db?
