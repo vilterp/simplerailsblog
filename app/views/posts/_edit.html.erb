@@ -5,6 +5,6 @@
 <% elsif edit.changes.keys.include? 'body' %>
   <%= link_to edit.user.name, edit.user %> made an edit <%= time_ago_in_words(edit.created_at) %> ago:
   <div class="diff">
-    <%= diff_excerpts edit.changes['body'].first, edit.changes['body'].second %>
+    <%= diff edit.changes['body'].first, edit.changes['body'].second %>
   </div>
 <% end %>

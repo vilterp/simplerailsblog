@@ -1,0 +1,38 @@
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 16:10:01) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (90.6ms)
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (116.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (204.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (292.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 734ms (View: 724, DB: 2) | 200 OK [http://localhost/posts/yeah]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-03-09 16:11:16) [GET]
+  Parameters: {"id"=>"yeah"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."permalink" = 'yeah') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 29) [0m
+Rendered posts/_post (22.2ms)
+  [4;36;1mEvent Load (0.7ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".item_id = 29 AND ("events"."action" = 'update' AND "events"."item_class" = 'Post')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (252.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (271.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_edit (285.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 861ms (View: 852, DB: 2) | 200 OK [http://localhost/posts/yeah]

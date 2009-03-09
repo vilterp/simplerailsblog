@@ -16,15 +16,15 @@ module ApplicationHelper
     while text[start..-1] =~ re
       match_index = start + (text[start..-1] =~ re)
       start_ind = [0, match_index - radius].max
-      end_ind = [match_index + text.match(re)[0].length + radius, text.length - 1].min
-  	unless last_range.include? start_ind-1
-      ans.rstrip!; ans << omission unless start_ind == 0
-      last_range = start_ind..end_ind
-      ans << text[last_range].lstrip
-  	else
-  	  ans << text[last_range.end+1..end_ind]
-      last_range = last_range.begin..end_ind
-  	end
+      end_ind = [match_index + text[start..-1].match(re)[0].length + radius, text.length - 1].min
+  	  unless last_range.include? start_ind-1
+        ans.rstrip!; ans << omission unless start_ind == 0
+        last_range = start_ind..end_ind
+        ans << text[last_range].lstrip
+  	  else
+  	    ans << text[last_range.end+1..end_ind]
+        last_range = last_range.begin..end_ind
+  	  end
       start = match_index + text.match(re)[0].length
     end
     ans.rstrip!; ans << omission unless last_range.end == text.length-1

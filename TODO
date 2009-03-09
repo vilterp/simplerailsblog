@@ -1,0 +1,6 @@
+- redirect to Post#show on post creation
+- diff_excerpts in comments
+- new post link at top of page
+- Edit | Destroy links after post, before comments header
+- preview
+- make the edit post textarea wider
