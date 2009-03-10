@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
+    @user.name = params[:user][:name] # why is this necessary?!
     @user.save
     if @user.errors.empty?
       self.current_user = @user
