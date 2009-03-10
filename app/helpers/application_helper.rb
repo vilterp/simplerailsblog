@@ -1,9 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
-require 'htmldiff' # TODO: how should I keep track of dependencies?
 
 module ApplicationHelper
-  
-  include HTMLDiff
   
   # loosely based on Rails' excerpt helper
   # http://rails.rubyonrails.org/classes/ActionView/Helpers/TextHelper.html#M001713
@@ -31,8 +28,8 @@ module ApplicationHelper
     options[:highlight].nil? ? ans : ans.gsub(re,options[:highlight])
   end
   
-  def diff_excerpts(text1, text2)
-    excerpts(diff(text1,text2),/<(ins|del) class="(diffmod|diffins|diffdel)">.*?<\/\1>/m)
+  def diff_excerpts(diff)
+    excerpts(diff,/<(ins|del) class="(diffmod|diffins|diffdel)">.*?<\/\1>/m)
   end
   
 end

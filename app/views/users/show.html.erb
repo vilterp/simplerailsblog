@@ -20,7 +20,7 @@
           <%= link_to event.changes['title'].second, event.item %>
         <% elsif event.changes.keys.include? 'body' %>
           updated <%= link_to event.item.title, event.item %>:
-          <%= diff_excerpts event.changes['body'][0], event.changes['body'][1] %>
+          <%= diff_excerpts event.diff %>
           <!-- TODO: diff -->
         <% end %>
       <% end %>      

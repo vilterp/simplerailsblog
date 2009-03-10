@@ -47,12 +47,7 @@ class PostsController < ApplicationController
     @post.owner = current_user
     
     respond_to do |format|
-<<<<<<< HEAD:app/controllers/posts_controller.rb
       if @post.save
-        
-=======
-      if @post.save_with_user(current_user)
->>>>>>> origin/eventstream:app/controllers/posts_controller.rb
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to(@post) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }

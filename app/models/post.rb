@@ -24,6 +24,9 @@ class Post < ActiveRecord::Base
   def save_with_user(theuser)
     e = Event.new :user => theuser, :changes => self.changes,
                   :action => (new_record? ? 'create' : 'update')
+    if self.changes.keys.include? 'body'
+      e.diff = diff(self.changes['body'].first, self.changes['body'].last)
+    end
     result = save
     e.item = self
     e.save
