@@ -1,10 +1,15 @@
-- redirect to Post#show on post creation
-- diff_excerpts in comments
-- new post link at top of page
-- Edit | Destroy links after post, before comments header
-- ajax preview before post (comment?) save
-- ajax diff before post save?
-- make the edit post textarea wider
-- only allow edit/create/comment when logged in
-- optimize post edits
-  - compute diff on save, put in db?
+- controller
+  - only allow edit/create/comment when logged in!
+  - redirect to Post#show on post creation
+- layout
+  - put new post link at top of page
+  - put Edit | Destroy links after post, before comments header
+- Edit screen
+  - ajax preview before save (same with comments?)
+  - ajax diff before post save?
+  - make the textarea wider
+  - ajax draft saves, GMail style?
+- optimization/db stuff
+  - diffs take too long to render -- compute on save, put in db?
+  - deleting a post breaks the event queue cuz it looks for a post that's not there
+    - store all attributes in post table? Only some attrs on per-model basis?
