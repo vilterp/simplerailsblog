@@ -9,6 +9,9 @@ class AddDiffToEvents < ActiveRecord::Migration
     Event.each do |e|
       if e.changes.keys.include? 'body'
         e.diff = diff e.changes['body'].first, e.changes['body'].last
+        e.save
+      end
+    end
   end
 
   def self.down
