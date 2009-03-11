@@ -9,15 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090305204248) do
-
-  create_table "authors", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "website"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20090310012708) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -34,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20090305204248) do
     t.text     "changes"
     t.integer  "item_id"
     t.string   "item_class"
+    t.string   "diff"
   end
 
   create_table "posts", :force => true do |t|

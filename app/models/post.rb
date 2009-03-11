@@ -1,3 +1,5 @@
+require 'htmldiff'
+
 class Post < ActiveRecord::Base  
   belongs_to :owner, :class_name => 'User'
   has_many :comments
@@ -20,7 +22,7 @@ class Post < ActiveRecord::Base
   end
   
   # TODO: wrap these in an include
-  
+  include HTMLDiff
   def save_with_user(theuser)
     e = Event.new :user => theuser, :changes => self.changes,
                   :action => (new_record? ? 'create' : 'update')
