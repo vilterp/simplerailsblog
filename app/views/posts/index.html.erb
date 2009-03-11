@@ -1,3 +1,5 @@
+<%= link_to 'New Post', new_post_path if logged_in? %>
+
 <% if !@posts.blank? %>
   <% for post in @posts.reverse %>
     <%= render :partial => post %>
@@ -5,5 +7,3 @@
 <% else %>
   <p>No posts.</p>
 <% end %>
-
-<%= link_to 'New Post', new_post_path %>

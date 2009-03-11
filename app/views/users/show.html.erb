@@ -21,12 +21,11 @@
         <% elsif event.changes.keys.include? 'body' %>
           updated <%= link_to event.item.title, event.item %>:
           <%= diff_excerpts event.diff %>
-          <!-- TODO: diff -->
         <% end %>
       <% end %>      
     <% elsif event.item_class == 'Comment' %>
-      commented on
-      <%= link_to event.item.post.title, post_path(event.item.post, :anchor => "comment_#{event.item.id}") %>: 
+      <%= link_to 'commented', post_path(event.item.post, :anchor => "comment_#{event.item.id}") %>
+      on <%= link_to event.item.post.title, event.item.post %>:
       <em>"<%= truncate event.item.body %>"</em>
     <% end %>
     </li>

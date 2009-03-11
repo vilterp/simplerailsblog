@@ -1,43 +1,44 @@
 <%= render :partial => @post %>
 
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %>
+<% end -%>
+
 <h2>Comments</h2>
 <div id="comments">
-    <% if !@post.comments_and_edits.blank? %>
-      <ul>
-      <% for comment_or_edit in @post.comments_and_edits %>
-        <li>
-        <% if comment_or_edit.class.to_s == 'Comment' %>
-          <%= render :partial => "comment", :object => comment_or_edit %>
-        <% else %> <!-- TODO: put this edit business into a partial? -->
-          <%= render :partial => "edit", :object => comment_or_edit %>
-        <% end %>
-        </li>
-      <% end -%>  
-      </ul>
-      <!-- TODO: nested comments or Trac-style followup link -->
+  <% if !@post.comments_and_edits.blank? %>
+    <ul>
+    <% for comment_or_edit in @post.comments_and_edits %>
+      <li>
+      <% if comment_or_edit.class.to_s == 'Comment' %>
+        <%= render :partial => "comment", :object => comment_or_edit %>
+      <% else %> <!-- TODO: put this edit business into a partial? -->
+        <%= render :partial => "edit", :object => comment_or_edit %>
+      <% end %>
+      </li>
+    <% end -%>  
+    </ul>
+  <% end -%>
+  
+  <% if logged_in? %>
+    <% unless @post.comments.blank? %>
       <h3 id="leave_comment">Leave Another Comment</h3>
     <% else %>
       <h3 id="leave_comment">Leave the First Comment</h3>
-    <% end %>
-
+    <% end -%>
+    <p>logged in as <%= link_to current_user.name, current_user %>
+    <em><small><%= link_to "Log Out &raquo;", logout_path %></small></em></p>
     <% form_for [@post, Comment.new] do |f| %>
-        <% if logged_in? %>
-            <p>logged in as <%= link_to current_user.name, current_user %>
-            <em><small><%= link_to "Log Out &raquo;", logout_path %></small></em></p>
-        <% else %>
-          <!-- TODO: create account, session automatically -->
-            <p><%= link_to "Log in &raquo;", login_path %></p>
-        <% end -%>
-        <p>
-            <%= f.text_area :body %>
-        </p>
-        <p>
-            <%= f.submit 'Speak' %>
-        </p>
+      <p>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit 'Speak' %>
+      </p>
     <% end %>
+  <% else %>
+    <!-- TODO: allow people to comment without creating an account... -->
+    <p><%= link_to "Log in to comment &raquo;", login_path %></p>
+  <% end -%>
 </div>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %> |
-<%= link_to 'Back', posts_path %>

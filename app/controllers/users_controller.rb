@@ -26,6 +26,7 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!"
     else
+      flash.now[:notice] = "Invalid username or password."
       render :action => 'new'
     end
   end
